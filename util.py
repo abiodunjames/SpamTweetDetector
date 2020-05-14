@@ -23,6 +23,7 @@ padding_idx = 1
 bidirectional = True
 batch_first = False
 
+
 def clean_tweet(tweet):
     tok = English()
     # Remove usernames, "RT" and Hash
@@ -93,6 +94,7 @@ def predict(tweet, model, vocab2index):
     else:
         return "SPAM"
 
+
 def get_prediction(tweet):
     vocab2index = json.load(open(vocab2index_path))
     words = json.load(open(words_path))
@@ -106,7 +108,7 @@ def get_prediction(tweet):
         bidirectional,
         dropout,
         padding_idx,
-        batch_first
+        batch_first,
     )
     model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
     return predict(tweet, model, vocab2index)
