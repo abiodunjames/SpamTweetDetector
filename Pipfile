@@ -7,6 +7,13 @@ verify_ssl = true
 
 [packages]
 nltk = "*"
+spacy = "*"
+numpy = "*"
+demoji = "*"
+gunicorn = "*"
+torch = "*"
+torchvision = {index = "p-lock",version = "*"}
+re = "*"
 
 [requires]
 python_version = "3.7"
