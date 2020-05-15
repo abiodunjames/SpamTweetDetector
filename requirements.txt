@@ -1,5 +1,5 @@
 Flask==1.0.3
-torchvision==0.2.1
+pytorch-lightning==0.7.6
 numpy==1.16.4
 Pillow==6.2.0
 gunicorn==19.9.0
