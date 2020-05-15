@@ -5,7 +5,6 @@ colorama==0.4.3
 demoji==0.2.1
 Flask==1.0.3
 future==0.18.2
-gunicorn==20.0.4
 idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.11.2
