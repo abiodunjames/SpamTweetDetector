@@ -13,7 +13,8 @@ demoji.download_codes()
 vocab2index_path = "./data/vocab2index.json"
 words_path = "./data/words.json"
 model_path = "./data/inference_model.pt"
-
+SPAM = "SPAM"
+HAM = "NOT_SPAM"
 embed_dim = 160
 hidden_dim = 500
 output_dim = 1
@@ -79,6 +80,10 @@ def predict(tweet, model, vocab2index):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tweet = clean_tweet(tweet)
     twt, length = tweet_encoded = encode_sentence(tweet, vocab2index)
+    # If the tweet length after preprocessing is 0, no need for classification
+    if length == 0:
+        return SPAM
+
     twt = twt[:length]
     assert len(twt) == length
     length = [length]
@@ -90,9 +95,9 @@ def predict(tweet, model, vocab2index):
     pred = model(tensor, tensor_length)
     pred = torch.round(pred).detach().numpy()
     if pred[0] == 0.0:
-        return "NOT_SPAM"
+        return HAM
     else:
-        return "SPAM"
+        return SPAM
 
 
 def get_prediction(tweet):
