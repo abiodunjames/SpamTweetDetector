@@ -12,7 +12,6 @@ For example, people would tweet things "RT @hubofml Everything is F**cked! #mach
 ## Solution
 I used text-categorization to analyze the content of tweets before retweeting. The PyTorch model was trained on Google Colab using 20K tweets sourced directly from twitter. 
 
-For the details, see my [post](https://medium.com/swlh/how-i-built-an-intelligent-twitter-bot-a7e5ea18f918) on how I built it.
 
 
 
