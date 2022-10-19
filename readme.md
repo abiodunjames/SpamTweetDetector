@@ -1,4 +1,4 @@
-## The Problem
+##The Problem
 
 One significant academic study estimated that up to 15% of Twitter users were automated bot accounts. 
 
